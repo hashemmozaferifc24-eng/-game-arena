@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAME ARENA</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b1020;color:white;font-family:tahoma,Arial}
+header{padding:22px 18px;background:linear-gradient(135deg,#17264a,#10172d);border-bottom:1px solid #26365d}
+.logo{font-size:25px;font-weight:bold;color:#f6c453}
+.logo span{color:white}
+.subtitle{color:#9daac5;font-size:12px;margin-top:8px}
+.container{padding:18px;max-width:600px;margin:auto}
+.welcome{background:linear-gradient(120deg,#263e78,#17264a);border-radius:18px;padding:22px;margin-bottom:20px}
+.welcome h2{margin:0 0 10px;font-size:20px}
+.welcome p{color:#c7d4f2;font-size:13px;line-height:2}
+.premium{background:linear-gradient(120deg,#72501b,#30220e);border:1px solid #c99b38;border-radius:16px;padding:17px;margin-bottom:25px}
+.premium h3{color:#ffd36c;margin:0 0 8px}
+.premium p{font-size:12px;color:#ead7ae;line-height:2}
+button{border:0;border-radius:10px;padding:12px 18px;font-family:tahoma;font-size:13px;font-weight:bold;cursor:pointer}
+.gold{background:#f2bd4d;color:#201707}
+.section-title{font-size:17px;margin:25px 0 15px}
+.games{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.game{background:#
+      <body>
+<header>
+<div class="logo">GAME <span>ARENA</span> 🎮</div>
+<div class="subtitle">دنیای رقابت، رفاقت و بازی آنلاین</div>
+</header>
+
+<main class="container">
+
+<section class="welcome">
+<h2>به میدان بازی خوش آمدی!</h2>
+<p>دوستانت را دعوت کن، تیم بساز و در رقابت‌های آنلاین شرکت کن. اینجا جای بازیکنان حرفه‌ای است!</
+      <section class="room">
+<h3>🏠 ساخت اتاق بازی</h3>
+<p>ساخت اتاق عمومی برای رقابت با بازیکنان دیگر، یا اتاق خصوصی برای بازی با دوستان. ساخت اتاق مخصوص اعضای پرمیوم است.</p>
+
+<button class="public" onclick="showModal('اتاق عمومی','برای ساخت اتاق عمومی به عضویت پرمیوم نیاز داری.')">
+ساخت اتاق عمومی
+</button>
+
+<button class="private" onclick="showModal('اتاق خصوصی','برای ساخت اتاق خصوصی به عضویت پرمیوم نیاز داری.')">
+ساخت اتاق خصوصی
+</button>
+</section>
+
+</main>
+
+<footer>
+GAME ARENA © 2026<br>
+بازی کن، رقابت کن، قهرمان شو!
+</footer>
+
+<div class="modal" id="modal">
+<div class="modal-box">
+<h3 id="modalTitle"></h3>
+<p id="modalText"></p>
+<button class="close" onclick="closeModal()">متوجه شدم</button>
+</div>
+</div>
+
+<script>
+function showModal(title,message){
+document.getElementById('modalTitle').textContent=title;
+document.getElementById('modalText').textContent=message;
+document.getElementById('modal').style.display='flex';
+}
+function closeModal(){
+document.getElementById('modal').style.display='none';
+}
+</script>
+
+</body>
+</html>
