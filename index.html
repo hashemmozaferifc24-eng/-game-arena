@@ -2,76 +2,110 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>GAME ARENA</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#0b1020;color:white;font-family:tahoma,Arial}
-header{padding:22px 18px;background:linear-gradient(135deg,#17264a,#10172d);border-bottom:1px solid #26365d}
-.logo{font-size:25px;font-weight:bold;color:#f6c453}
+body{margin:0;background:#0b1020;color:white;font-family:tahoma}
+header{text-align:center;padding:25px;background:#17264a;border-bottom:2px solid #d9ad42}
+.logo{font-size:28px;color:#f5c451;font-weight:bold}
 .logo span{color:white}
-.subtitle{color:#9daac5;font-size:12px;margin-top:8px}
-.container{padding:18px;max-width:600px;margin:auto}
-.welcome{background:linear-gradient(120deg,#263e78,#17264a);border-radius:18px;padding:22px;margin-bottom:20px}
-.welcome h2{margin:0 0 10px;font-size:20px}
-.welcome p{color:#c7d4f2;font-size:13px;line-height:2}
-.premium{background:linear-gradient(120deg,#72501b,#30220e);border:1px solid #c99b38;border-radius:16px;padding:17px;margin-bottom:25px}
-.premium h3{color:#ffd36c;margin:0 0 8px}
-.premium p{font-size:12px;color:#ead7ae;line-height:2}
-button{border:0;border-radius:10px;padding:12px 18px;font-family:tahoma;font-size:13px;font-weight:bold;cursor:pointer}
-.gold{background:#f2bd4d;color:#201707}
-.section-title{font-size:17px;margin:25px 0 15px}
-.games{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.game{background:#
-      <body>
+.container{max-width:550px;margin:auto;padding:18px}
+.welcome,.premium,.game,.rooms{padding:20px;border-radius:16px;margin-bottom:18px}
+.welcome{background:#243d70}
+.premium{background:#493416;border:1px solid #d9ad42}
+h2,h3{margin-top:0}
+p{font-size:13px;line-height:2;color:#cbd5e8}
+button{width:100%;padding:14px;border:0;border-radius:10px;font-family:tahoma;font-weight:bold;margin-top:10px;background:#e9b844;color:#172033}
+.games{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.game{background:#17243e;border:1px solid #344968;text-align:center}
+.icon{font-size:35px}
+.game p{min-height:45px}
+.game button{background:#294d82;color:white}
+.rooms{background:#17243e;border:1px solid #344968}
+.rooms button{background:#285ca0;color:white}
+.rooms button:last-child{background:#34466c}
+footer{text-align:center;padding:25px;color:#8996ad;font-size:12px}
+#popup{display:none;position:fixed;inset:0;background:#000c;align-items:center;justify-content:center;padding:20px}
+.box{background:#1b2b49;padding:25px;border-radius:15px;text-align:center;width:100%;max-width:350px}
+</style>
+</head>
+<body>
 <header>
-<div class="logo">GAME <span>ARENA</span> 🎮</div>
-<div class="subtitle">دنیای رقابت، رفاقت و بازی آنلاین</div>
+<div class="logo">GAME ARENA 🎮</div>
+<p>دنیای رقابت و رفاقت</p>
 </header>
 
 <main class="container">
-
 <section class="welcome">
 <h2>به میدان بازی خوش آمدی!</h2>
-<p>دوستانت را دعوت کن، تیم بساز و در رقابت‌های آنلاین شرکت کن. اینجا جای بازیکنان حرفه‌ای است!</
-      <section class="room">
-<h3>🏠 ساخت اتاق بازی</h3>
-<p>ساخت اتاق عمومی برای رقابت با بازیکنان دیگر، یا اتاق خصوصی برای بازی با دوستان. ساخت اتاق مخصوص اعضای پرمیوم است.</p>
-
-<button class="public" onclick="showModal('اتاق عمومی','برای ساخت اتاق عمومی به عضویت پرمیوم نیاز داری.')">
-ساخت اتاق عمومی
-</button>
-
-<button class="private" onclick="showModal('اتاق خصوصی','برای ساخت اتاق خصوصی به عضویت پرمیوم نیاز داری.')">
-ساخت اتاق خصوصی
-</button>
+<p>دوستانت را دعوت کن، تیم بساز و وارد رقابت شو. اینجا میدان بازیکنان حرفه‌ای است!</p>
 </section>
 
+<section class="premium">
+<h3>👑 عضویت پرمیوم</h3>
+<p>با عضویت ویژه، اتاق عمومی و خصوصی بساز و میزبان دوستانت باش.</p>
+<button onclick="show('عضویت پرمیوم','بخش اشتراک‌ها به‌زودی فعال می‌شود.')">مشاهده اشتراک‌ها</button>
+</section>
+
+<h3>🃏 بازی‌های ما</h3>
+<section class="games">
+<div class="game">
+<div class="icon">♠️</div>
+<h3>حکم</h3>
+<p>بازی چهارنفره تیمی</p>
+<button onclick="show('حکم','بازی حکم در حال توسعه است.')">ورود به بازی</button>
+</div>
+
+<div class="game">
+<div class="icon">🎴</div>
+<h3>اسپیکو</h3>
+<p>رقابت و پیش‌بینی</p>
+<button onclick="show('اسپیکو','به‌زودی اضافه می‌شود.')">به‌زودی</button>
+</div>
+
+<div class="game">
+<div class="icon">🂡</div>
+<h3>یازده</h3>
+<p>بازی هوش و مهارت</p>
+<button onclick="show('یازده','به‌زودی اضافه می‌شود.')">به‌زودی</button>
+</div>
+
+<div class="game">
+<div class="icon">🏆</div>
+<h3>مسابقات</h3>
+<p>رقابت برای قهرمانی</p>
+<button onclick="show('مسابقات','به‌زودی راه‌اندازی می‌شود.')">به‌زودی</button>
+</div>
+</section>
+
+<section class="rooms">
+<h3>🏠 ساخت اتاق</h3>
+<p>ساخت اتاق مخصوص کاربران پرمیوم است.</p>
+<button onclick="show('اتاق عمومی','برای ساخت اتاق باید پرمیوم داشته باشی.')">ساخت اتاق عمومی</button>
+<button onclick="show('اتاق خصوصی','برای ساخت اتاق باید پرمیوم داشته باشی.')">ساخت اتاق خصوصی</button>
+</section>
 </main>
 
-<footer>
-GAME ARENA © 2026<br>
-بازی کن، رقابت کن، قهرمان شو!
-</footer>
+<footer>GAME ARENA © 2026<br>بازی کن، رقابت کن، قهرمان شو!</footer>
 
-<div class="modal" id="modal">
-<div class="modal-box">
-<h3 id="modalTitle"></h3>
-<p id="modalText"></p>
-<button class="close" onclick="closeModal()">متوجه شدم</button>
+<div id="popup">
+<div class="box">
+<h3 id="title"></h3>
+<p id="message"></p>
+<button onclick="hide()">باشه</button>
 </div>
 </div>
 
 <script>
-function showModal(title,message){
-document.getElementById('modalTitle').textContent=title;
-document.getElementById('modalText').textContent=message;
-document.getElementById('modal').style.display='flex';
+function show(t,m){
+document.getElementById('title').textContent=t;
+document.getElementById('message').textContent=m;
+document.getElementById('popup').style.display='flex';
 }
-function closeModal(){
-document.getElementById('modal').style.display='none';
+function hide(){
+document.getElementById('popup').style.display='none';
 }
 </script>
-
 </body>
 </html>
